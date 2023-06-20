@@ -49,7 +49,7 @@ div.list-items.container {
     height: 65px;
     border-radius: 5px;
     padding-left: 70px;
-    font-size: 18px;
+    font-size: 1.125rem;
     outline: none;
 
 }
@@ -102,6 +102,7 @@ input[type="radio"] {
     display: flex;
     justify-content: space-between;
     padding: 20px;
+   
 }
 
 
@@ -110,6 +111,8 @@ input[type="radio"] {
     text-decoration: none;
     list-style-type: none;
     gap: 15px;
+    font-weight: 700;
+    color: #9495A5;
 }
 
 .status ul li a:hover, .status ul li a:active {
@@ -122,6 +125,10 @@ input[type="radio"] {
 
 .status-bar .clear:hover,.status-bar .clear:active  {
     color: #494C6B;
+}
+
+.status.mobile {
+    display: none;
 }
 
 
@@ -145,3 +152,50 @@ input[type="radio"]:checked::before {
     text-align: center;
 }
  */
+
+
+ @media screen and (max-width:600px) {
+
+   
+    .container {
+        justify-content: space-between;
+        padding: 0 30px;
+    }
+    .bg-desktop {
+        height: 200px;
+    }
+    .input-text {
+        width: 327px;
+        border: none;
+        height: 48px;
+        border-radius: 5px;
+        padding-left: 70px;
+        font-size: 12px;
+        outline: none;
+    
+    }
+    .input-text::placeholder, .status-bar{
+        font-size: 12px;
+    }
+
+    .status {
+        display: none;
+       
+    }
+
+    .status.mobile{
+        display: flex;
+        width: 327px;
+        background-color: #fff;
+        justify-content: center;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    .drag-drop {
+        font-size: 14px;
+        margin-top: 100px;
+    }
+
+ }
