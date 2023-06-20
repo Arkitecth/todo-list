@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+    color:#393A4B;
+}
+body {
+    background-color: #fafafa;
+    color: #494C6B;
+}
+p, span {
+    color: #9495A5;
+}
+
+.bg-desktop {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 4%;
+}
+
+.container h1 {
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 15px;
+}
+
+div.list-items.container {
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-content: center;
+}
+
+
+.input-text {
+    width: 33.75rem;
+    border: none;
+    height: 65px;
+    border-radius: 5px;
+    padding-left: 70px;
+    font-size: 18px;
+    outline: none;
+
+}
+
+.list-item {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #fff;
+}
+
+input[type="radio"] {
+    appearance: none;
+    /* position: relative;
+    left: 50px; */
+    transform: translateX(50px);
+    border: 1px solid #d3d3d3;
+    height: 24px;
+    width: 24px;
+    border-radius:100%;
+    margin: 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+.input-text::placeholder{
+    text-align: left;
+    font-size: 18px;
+    color: #9495A5;
+}
+
+.list-group {
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 3px;
+}
+
+.list-group .list-item {
+    border-radius: 1px;
+    border-bottom: 1px solid #E3E4F1;
+}
+.cross {
+    padding-right: 20px;
+    display: none;
+}
+
+.status-bar{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+
+.status ul, .status ul li a {
+    display: flex;
+    text-decoration: none;
+    list-style-type: none;
+    gap: 15px;
+}
+
+.status ul li a:hover, .status ul li a:active {
+    color: #3A7CFD;
+}
+
+.clear {
+    cursor: pointer;
+}
+
+.status-bar .clear:hover,.status-bar .clear:active  {
+    color: #494C6B;
+}
+
+
+
+/* 
+input[type="radio"]:checked {
+    appearance: none;
+    border-radius:100%;
+    outline: none;
+    padding: 0;
+    content: none;
+    border: none;
+}
+
+input[type="radio"]:checked::before {
+    content: url("images/icon-check.svg");
+    background-color: black;
+    width: 24px;
+    height: 240px;
+    border-radius: 100%;
+    text-align: center;
+}
+ */

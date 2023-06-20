@@ -1,0 +1,46 @@
+{
+    "sourceFile": "index.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1687191548886,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1687191554823,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,11 +21,6 @@\n \n   Clear Completed\n \n   Drag and drop to reorder list\n-\n-  <div class=\"attribution\">\n-    Challenge by <a href=\"https://www.frontendmentor.io?ref=challenge\" target=\"_blank\">Frontend Mentor</a>. \n-    Coded by <a href=\"#\">Your Name Here</a>.\n-  </div>\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687191566393,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,10 @@\n \n   </style>\n </head>\n <body>\n+\n+  <img src=\"images/bg-desktop-dark.jpg\" alt=\"\">\n   Todo\n \n   <!-- Add dynamic number --> items left\n \n"
+                },
+                {
+                    "date": 1687191571509,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n   </style>\n </head>\n <body>\n \n-  <img src=\"images/bg-desktop-dark.jpg\" alt=\"\">\n+  <img src=\"images/bg-desktop-dark.jpg\" alt=\"bg-desktop-dark\">\n   Todo\n \n   <!-- Add dynamic number --> items left\n \n"
+                },
+                {
+                    "date": 1687191602552,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,10 @@\n <html lang=\"en\">\n <head>\n   <meta charset=\"UTF-8\">\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"> <!-- displays site properly based on user's device -->\n-\n   <link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"./images/favicon-32x32.png\">\n+  <link rel=\"stylesheet\" href=\"styles.css\">\n   \n   <title>Frontend Mentor | Todo app</title>\n \n   </style>\n"
+                },
+                {
+                    "date": 1687191644554,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,8 @@\n <html lang=\"en\">\n <head>\n   <meta charset=\"UTF-8\">\n   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"> <!-- displays site properly based on user's device -->\n-  <link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"./images/favicon-32x32.png\">\n   <link rel=\"stylesheet\" href=\"styles.css\">\n   \n   <title>Frontend Mentor | Todo app</title>\n \n@@ -12,9 +11,9 @@\n </head>\n <body>\n \n   <img src=\"images/bg-desktop-dark.jpg\" alt=\"bg-desktop-dark\">\n-  Todo\n+  <h1>Todo  </h1>\n \n   <!-- Add dynamic number --> items left\n \n   All\n"
+                },
+                {
+                    "date": 1687191739162,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,15 +13,15 @@\n \n   <img src=\"images/bg-desktop-dark.jpg\" alt=\"bg-desktop-dark\">\n   <h1>Todo  </h1>\n \n-  Add dynamic number items left\n+  <!-- Add dynamic number --> items left\n \n-  All\n+  <!-- All\n   Active \n   Completed\n \n   Clear Completed\n \n-  Drag and drop to reorder list\n+  Drag and drop to reorder list -->\n </body>\n </html>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1687200875304,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,61 @@\n+<!DOCTYPE html>\n+<html lang=\"en\">\n+<head>\n+  <meta charset=\"UTF-8\">\n+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"> <!-- displays site properly based on user's device -->\n+  <link rel=\"stylesheet\" href=\"styles.css\">\n+  \n+  <title>Frontend Mentor | Todo app</title>\n+\n+  </style>\n+</head>\n+<body>\n+  <img class=\"bg-desktop\" src=\"images/bg-desktop-light.jpg\" alt=\"bg-desktop-light\">\n+  <div class=\"container\">\n+    <h1> Todo</h1>\n+    <img src=\"images/icon-moon.svg\" alt=\"moon-icon\">\n+  </div>\n+\n+  <div class=\"list-items container\">\n+    <div class=\"list-item\">\n+      <input type=\"radio\" name=\"checkbox\" class=\"checkbox\">\n+      <input class=\"input-text\" type=\"text\" name=\"text\" id=\"text\" placeholder=\"Create a new todo...\">\n+    </div>\n+    <div class=\"list-group\">\n+      <table>\n+        <tr> \n+          <td>\n+            <div class=\"list-item\">\n+              <input type=\"radio\" name=\"checkbox\" class=\"checkbox\">\n+              <input class=\"input-text\" type=\"text\" name=\"text\" id=\"text\" placeholder=\"Create a new todo...\">\n+            </div>\n+          </td>\n+         \n+      \n+        </tr>\n+        <tr> \n+          <div class=\"list-item\">\n+            <input type=\"radio\" name=\"checkbox\" class=\"checkbox\">\n+            <input class=\"input-text\" type=\"text\" name=\"text\" id=\"text\" placeholder=\"Create a new todo...\">\n+          </div>\n+        </tr>\n+      </table>\n+    \n+    </div>\n+\n+\n+  </div>\n+\n+\n+  <!-- Add dynamic number --> \n+  <!-- items left -->\n+\n+  <!-- All\n+  Active \n+  Completed\n+\n+  Clear Completed\n+\n+  Drag and drop to reorder list -->\n+</body>\n+</html>\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1687191548886,
+            "name": "Commit-0",
+            "content": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"> <!-- displays site properly based on user's device -->\n\n  <link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"./images/favicon-32x32.png\">\n  \n  <title>Frontend Mentor | Todo app</title>\n\n  </style>\n</head>\n<body>\n  Todo\n\n  <!-- Add dynamic number --> items left\n\n  All\n  Active \n  Completed\n\n  Clear Completed\n\n  Drag and drop to reorder list\n\n  <div class=\"attribution\">\n    Challenge by <a href=\"https://www.frontendmentor.io?ref=challenge\" target=\"_blank\">Frontend Mentor</a>. \n    Coded by <a href=\"#\">Your Name Here</a>.\n  </div>\n</body>\n</html>"
+        }
+    ]
+}
