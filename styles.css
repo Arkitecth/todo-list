@@ -1,22 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+:root {
+    --primary-background-color: #fafafa;
+    --paragraph-color:#393A4B;
+    --primary-text-color:#494C6B;
+    --dark-text-color:#C8CBE7;
+    --dark-background-color:#171823; 
+    --dark-list-color:#25273D;
+    --placeholder-text-color:#9495A5;
+    --border-color:#E3E4F1;
+    --hover-color: #3A7CFD;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Josefin Sans', sans-serif;
-    color:#393A4B;
+    color:var(--primary-text-color);
 }
+
+
+
 body {
-    background-color: #fafafa;
-    color: #494C6B;
+    background-color: var(--primary-background-color);
+    color: var(--primary-text-color);
 }
+
+/* Dark Styles */
+
+.dark-background {
+    background-color: var(--dark-background-color); 
+}
+
+.dark-list-color {
+    background-color: var(--dark-list-color) !important;
+    color: var(--dark-text-color) !important;
+}
+
+
+
+
 p, span {
-    color: #9495A5;
+    color: var(--placeholder-text-color);
 }
 
 .bg-desktop {
     position: absolute;
     width: 100%;
+    height: 300px;
     top: 0;
     left: 0;
     z-index: -1;
@@ -54,6 +85,8 @@ div.list-items.container {
 
 }
 
+/* List items */
+
 .list-item {
     display: flex;
     justify-content: flex-end;
@@ -63,35 +96,79 @@ div.list-items.container {
     background-color: #fff;
 }
 
-input[type="radio"] {
-    appearance: none;
-    /* position: relative;
-    left: 50px; */
-    transform: translateX(50px);
-    border: 1px solid #d3d3d3;
-    height: 24px;
+/* Checkmode Light */
+input[type="checkbox"] {
+    transform: translateX(40px);
     width: 24px;
-    border-radius:100%;
-    margin: 0;
-    text-align: center;
+    height: 24px;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
     cursor: pointer;
+}
+
+input[type="checkbox"]:hover{
+
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(#55DDFF, #C058F3) border-box; 
+    border: 1px solid transparent;
+}
+
+input[type="checkbox"]:checked {
+    background: linear-gradient(#55DDFF, #C058F3) padding-box,
+                linear-gradient(#fff, #fff) border-box; 
+    width: 24px;
+    height: 24px;
+}
+
+input[type="checkbox"]:checked::before {
+    content: url("images/icon-check.svg");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:linear-gradient(#55DDFF, #C058F3) padding-box; 
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    text-align: center;
 }
 
 .input-text::placeholder{
     text-align: left;
     font-size: 18px;
-    color: #9495A5;
+    color: var(--placeholder-text-color)
 }
+
+/* Check Mode Dark */
+.dark-check:hover {
+    background: linear-gradient(#25273D, #25273D) padding-box,
+    linear-gradient(#55DDFF, #C058F3) border-box!important; 
+    border: 1px solid transparent;
+    background-color: #ffffff;
+}
+
+.dark-check{
+    background-color: #25273D !important;
+}
+
+
+
+
 
 .list-group {
     border-radius: 5px;
     background-color: #fff;
     padding: 3px;
+    display: none;
 }
 
 .list-group .list-item {
     border-radius: 1px;
-    border-bottom: 1px solid #E3E4F1;
+    border-bottom: 1px solid var(--border-color)
 }
 .cross {
     padding-right: 20px;
@@ -112,11 +189,11 @@ input[type="radio"] {
     list-style-type: none;
     gap: 15px;
     font-weight: 700;
-    color: #9495A5;
+    color: var(--secondary-text-color)
 }
 
 .status ul li a:hover, .status ul li a:active {
-    color: #3A7CFD;
+    color: var(--hover-color)
 }
 
 .clear {
@@ -124,39 +201,17 @@ input[type="radio"] {
 }
 
 .status-bar .clear:hover,.status-bar .clear:active  {
-    color: #494C6B;
+    color: var(--primary-text-color);
 }
 
-.status.mobile {
+.status.mobile, .drag-drop, .status-bar {
     display: none;
 }
 
 
 
-/* 
-input[type="radio"]:checked {
-    appearance: none;
-    border-radius:100%;
-    outline: none;
-    padding: 0;
-    content: none;
-    border: none;
-}
-
-input[type="radio"]:checked::before {
-    content: url("images/icon-check.svg");
-    background-color: black;
-    width: 24px;
-    height: 240px;
-    border-radius: 100%;
-    text-align: center;
-}
- */
-
 
  @media screen and (max-width:600px) {
-
-   
     .container {
         justify-content: space-between;
         padding: 0 30px;
@@ -165,7 +220,7 @@ input[type="radio"]:checked::before {
         height: 200px;
     }
     .input-text {
-        width: 327px;
+        width: 250px;
         border: none;
         height: 48px;
         border-radius: 5px;
@@ -189,13 +244,17 @@ input[type="radio"]:checked::before {
         background-color: #fff;
         justify-content: center;
         border-radius: 5px;
-        padding: 10px;
+        padding: 20px;
         font-size: 14px;
     }
     
     .drag-drop {
         font-size: 14px;
         margin-top: 100px;
+    }
+
+    .cross {
+        display: inline;
     }
 
  }

@@ -4,41 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
   <link rel="stylesheet" href="styles.css">
-  
   <title>Frontend Mentor | Todo app</title>
-
   </style>
 </head>
 <body>
   <img class="bg-desktop" src="images/bg-desktop-light.jpg" alt="bg-desktop-light">
   <div class="container">
     <h1> Todo</h1>
-    <img src="images/icon-moon.svg" alt="moon-icon">
+    <img class="switch-dark" src="images/icon-moon.svg" alt="moon-icon">
   </div>
 
   <div class="list-items container">
     <div class="list-item">
-      <input type="radio" name="checkbox" class="checkbox">
-      <input class="input-text" type="text" name="text" placeholder="Create a new todo...">
+      <input type="checkbox" name="checkbox" class="checkbox">
+      <input class="input-text entry" type="text" name="text" placeholder="Create a new todo...">
       <img class="cross" src="images/icon-cross.svg" alt="icon-cross">
     </div>
 
     <div class="list-group">
-      <div class="list-item">
-        <input type="radio" name="checkbox" class="checkbox">
+      <!-- <div class="list-item">
+        <input type="checkbox" name="checkbox" class="checkbox">
         <input class="input-text" type="text" name="text" placeholder="Create a new todo...">
         <img class="cross" src="images/icon-cross.svg" alt="icon-cross">
       </div>
       <div class="list-item">
-        <input type="radio" name="checkbox" class="checkbox">
+        <input type="checkbox" name="checkbox" class="checkbox">
         <input class="input-text" type="text" name="text" placeholder="Create a new todo...">
         <img class="cross" src="images/icon-cross.svg" alt="icon-cross">
       </div>
       <div class="list-item">
-        <input type="radio" name="checkbox" class="checkbox">
+        <input type="checkbox" name="checkbox" class="checkbox">
         <input class="input-text" type="text" name="text" placeholder="Create a new todo...">
         <img class="cross" src="images/icon-cross.svg" alt="icon-cross">
-      </div>
+      </div> -->
 
       <div class="status-bar">
         <p><span class="number">5</span> items left</p>
@@ -67,8 +65,7 @@
     <p class="drag-drop"> Drag and drop to reorder list</p>
 
   </div>
-
- 
-
 </body>
+
+<script src="script.js"></script>
 </html>
