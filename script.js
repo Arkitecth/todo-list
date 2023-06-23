@@ -4,6 +4,7 @@ const body = document.querySelector("body");
 const listGroup = document.querySelector(".list-group")
 const entry = document.querySelector(".entry"); 
 const statusBar = document.querySelector(".status-bar")
+const numElementsLeft = document.querySelector(".number")
 const dragDropParagraph = document.querySelector(".drag-drop"); 
 const mobileStatusBar = document.querySelector(".status.mobile"); 
 let numElements = 0; 
@@ -57,6 +58,10 @@ function updateUI(listItem, inputText, checkbox) {
     }
 }
 
+function updateNumElements() {
+    numElementsLeft.textContent = numElements; 
+}
+
 
 function deleteItem(listItem) {
     if(numElements === 1) {
@@ -68,6 +73,7 @@ function deleteItem(listItem) {
     listItem.currentTarget.parentElement.remove();
     listItem.currentTarget.parentElement.removeEventListener("mouseover",showCross); 
     listItem.currentTarget.parentElement.removeEventListener("mouseout", hideCross)
+    updateNumElements(); 
 }
 
 function hideCross(listItem) {
@@ -117,6 +123,8 @@ function addTodo(value) {
 
     cross.addEventListener("click", deleteItem, listItem); 
     updateUI(listItem, inputEntry, checkbox);
+    updateNumElements(); 
+   
 }
 
 function checkButtonHandler(element) {
