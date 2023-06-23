@@ -209,6 +209,23 @@ input[type="checkbox"]:checked::before {
 }
 
 
+/* Dynamic Sytles */
+.complete {
+    text-decoration: line-through;
+
+}
+
+.toggle-inline {
+    display: inline !important;
+}
+
+
+
+.complete:disabled {
+    background-color: white;
+    color: #D1D2DA;
+}
+
 
 
  @media screen and (max-width:600px) {
