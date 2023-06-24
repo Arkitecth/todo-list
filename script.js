@@ -1,10 +1,17 @@
 const switchDark = document.querySelector(".switch-dark"); 
 const desktopBackground = document.querySelector(".bg-desktop"); 
 const body = document.querySelector("body");
-const listGroup = document.querySelector(".list-group")
+
+
+const listGroup = document.querySelector(".list-group");
 const entry = document.querySelector(".entry"); 
-const statusBar = document.querySelector(".status-bar")
-const filterStatus = document.querySelector(".status-bar .status")
+const statusBar = document.querySelector(".status-bar");
+
+const filterAll = document.querySelectorAll(".all"); 
+const filterActive = document.querySelectorAll(".active");
+const filterCompleted = document.querySelectorAll(".completed");
+
+
 const numElementsLeft = document.querySelector(".number")
 const dragDropParagraph = document.querySelector(".drag-drop"); 
 const mobileStatusBar = document.querySelector(".status.mobile"); 
@@ -142,7 +149,30 @@ function onChecked() {
     })
 }
 
-function showAll(listGroup) {
+function showAll() {
+    const allItems = document.querySelectorAll("div.list-item");
+    allItems.forEach((element) => {
+        element.style.display = "flex";
+    })
+}
+
+function showActive() {
+    const activeItems = document.querySelectorAll("div.list-item.complete");
+    activeItems.forEach((element) => {
+        element.style.display = "none";
+    })
+}
+
+function showComplete() {
+    const completeItems = document.querySelectorAll("div.list-group .list-item");
+    completeItems.forEach((element) => {
+        if(element.classList.contains("complete")) {
+            element.style.display = "flex"; 
+        }
+        else {
+            element.style.display = "none";
+        }
+    }); 
 }
 
 entry.addEventListener("keypress", (e) => {
@@ -167,10 +197,12 @@ statusBar.lastElementChild.addEventListener("click", () => {
     })
 })
 
-
-
-
-
-filterStatus.firstElementChild.addEventListener("click", () => {
-    
+filterAll.forEach((element) => {
+    element.addEventListener("click", showAll);
+})
+filterActive.forEach((element) => {
+    element.addEventListener("click", showActive);
+})
+filterCompleted.forEach((element) => {
+    element.addEventListener("click", showComplete);
 })
