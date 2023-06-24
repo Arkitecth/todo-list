@@ -4,6 +4,7 @@ const body = document.querySelector("body");
 const listGroup = document.querySelector(".list-group")
 const entry = document.querySelector(".entry"); 
 const statusBar = document.querySelector(".status-bar")
+const filterStatus = document.querySelector(".status-bar .status")
 const numElementsLeft = document.querySelector(".number")
 const dragDropParagraph = document.querySelector(".drag-drop"); 
 const mobileStatusBar = document.querySelector(".status.mobile"); 
@@ -63,6 +64,7 @@ function updateNumElements() {
 }
 
 
+
 function deleteItem(listItem) {
     if(numElements === 1) {
         listGroup.style.display = "none";
@@ -70,9 +72,7 @@ function deleteItem(listItem) {
         dragDropParagraph.style.display = "none";
     }
     numElements -= 1; 
-    listItem.currentTarget.parentElement.remove();
-    listItem.currentTarget.parentElement.removeEventListener("mouseover",showCross); 
-    listItem.currentTarget.parentElement.removeEventListener("mouseout", hideCross)
+    listItem.remove(); 
     updateNumElements(); 
 }
 
@@ -121,7 +121,9 @@ function addTodo(value) {
     dragDropParagraph.style.display = "block";
     numElements += 1;
 
-    cross.addEventListener("click", deleteItem, listItem); 
+    cross.addEventListener("click", () => {
+        deleteItem(listItem);
+    }); 
     updateUI(listItem, inputEntry, checkbox);
     updateNumElements(); 
    
@@ -140,6 +142,9 @@ function onChecked() {
     })
 }
 
+function showAll(listGroup) {
+}
+
 entry.addEventListener("keypress", (e) => {
     if(e.key === "Enter") {
         addTodo(entry.value);
@@ -148,3 +153,24 @@ entry.addEventListener("keypress", (e) => {
 });
 
 switchDark.addEventListener("click", toggleDark); 
+statusBar.lastElementChild.addEventListener("click", () => {
+    const completedItems = document.querySelectorAll("div.list-item.complete");
+    completedItems.forEach((element) => {
+        deleteItem(element)
+    })
+})
+
+statusBar.lastElementChild.addEventListener("click", () => {
+    const completedItems = document.querySelectorAll("div.list-item.complete");
+    completedItems.forEach((element) => {
+        deleteItem(element)
+    })
+})
+
+
+
+
+
+filterStatus.firstElementChild.addEventListener("click", () => {
+    
+})
