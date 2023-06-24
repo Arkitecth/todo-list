@@ -157,10 +157,15 @@ function showAll() {
 }
 
 function showActive() {
-    const activeItems = document.querySelectorAll("div.list-item.complete");
+    const activeItems = document.querySelectorAll("div.list-group .list-item");
     activeItems.forEach((element) => {
-        element.style.display = "none";
-    })
+        if(element.classList.contains("complete")) {
+            element.style.display = "none"; 
+        }
+        else {
+            element.style.display = "flex";
+        }
+    }); 
 }
 
 function showComplete() {
