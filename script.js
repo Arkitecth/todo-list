@@ -15,7 +15,12 @@ const filterCompleted = document.querySelectorAll(".completed");
 const numElementsLeft = document.querySelector(".number")
 const dragDropParagraph = document.querySelector(".drag-drop"); 
 const mobileStatusBar = document.querySelector(".status.mobile"); 
+
+
 let numElements = 0; 
+let draggedTarget = null; 
+let mouseMovement = 0; 
+let mouseDirection = null; 
 
 function darkCheckMark() {
     checkButtons.forEach((element) => {
@@ -91,10 +96,12 @@ function showCross(listItem) {
     listItem.currentTarget.lastElementChild.style.display = "inline";
 }
 
+
 function addTodo(value) {
     // Create a Todo Element 
     // Div
     const listItem = document.createElement("div"); 
+    listItem.setAttribute("draggable", true)
     listItem.classList.add("list-item")
 
     // Checkbox 
@@ -131,6 +138,26 @@ function addTodo(value) {
     cross.addEventListener("click", () => {
         deleteItem(listItem);
     }); 
+    listItem.addEventListener("drag", (ev) => {
+        draggedTarget = ev.currentTarget; 
+    })
+
+    listItem.addEventListener("dragover", (ev) => {
+        ev.preventDefault();
+    })
+    
+
+    listItem.addEventListener("drop", (ev) => {
+        ev.preventDefault(); 
+        if(mouseDirection === "up") {
+            listGroup.insertBefore(draggedTarget, listItem);
+        }
+        else if(mouseDirection === "down") {
+            listGroup.insertBefore(draggedTarget, listItem.nextElementSibling);
+        }
+      
+    })
+
     updateUI(listItem, inputEntry, checkbox);
     updateNumElements(); 
    
@@ -210,4 +237,14 @@ filterActive.forEach((element) => {
 })
 filterCompleted.forEach((element) => {
     element.addEventListener("click", showComplete);
+})
+
+document.addEventListener("mousemove", (e) => {
+    if(e.clientY > mouseMovement) {
+        mouseDirection = "down";
+    } 
+    else {
+        mouseDirection = "up";
+    }
+    mouseMovement = e.clientY;
 })
