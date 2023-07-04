@@ -129,8 +129,12 @@ function createItem(value) {
     cross.classList.add("cross");
     cross.style.display = "none";
 
-    listItem.addEventListener("mouseover", showCross);
-    listItem.addEventListener("mouseout", hideCross); 
+    listItem.addEventListener("mouseover", () => {
+        showCross(listItem); 
+    });
+    listItem.addEventListener("mouseout", () => {
+        hideCross(listItem); 
+    }); 
 
     listItem.appendChild(checkbox); 
     listItem.appendChild(inputEntry);
@@ -206,11 +210,15 @@ function deleteItem(listItem) {
 }
 
 function hideCross(listItem) {
-    listItem.currentTarget.lastElementChild.style.display = "none";
+    listItem.lastElementChild.style.display = "none";
 }
 
 function showCross(listItem) {
-    listItem.currentTarget.lastElementChild.style.display = "inline";
+    let listItems = getItemFromStorage(); 
+    listItem.lastElementChild.style.display = "inline";
+    // Store Edit Information
+    listItems[listItem.dataset.id].item = listItem.firstElementChild.nextElementSibling.value; 
+    localStorage.setItem("listItems", JSON.stringify(listItems));
 }
 
 function updateState(listItem, button, completed) {
