@@ -32,7 +32,7 @@ Users should be able to:
 <img width="1430" alt="Screen Shot 2023-07-04 at 1 23 42 PM" src="https://github.com/Arkitecth/todo-list/assets/65973967/0737d802-7e45-4735-8f65-7f2240131ca7">
 
 ### Links
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Todo App](https://arkitecth.github.io/todo-list/)
 
 
 ### Built with
